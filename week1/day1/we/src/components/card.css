@@ -1,0 +1,29 @@
+.main{
+    border: 1px solid black;
+    width: 20%;
+    margin: auto;
+    margin-top: 10px;
+}
+.profile{
+    width: 30%;
+    margin: auto;
+}
+img {
+    width: 100%;
+}
+.name{
+    margin: auto;
+    width: 50%;
+    margin-bottom: 5px;
+}
+h3{
+    margin: auto;
+    text-align: center;
+}
+p {
+    margin: auto;
+    text-align: center;
+    margin: 5px;
+}
+
+
