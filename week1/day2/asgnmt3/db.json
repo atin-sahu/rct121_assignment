@@ -1,0 +1,89 @@
+{
+  "data": [
+    {
+      "name": "atin",
+      "review": 5,
+      "price": 100,
+      "country": "india",
+      "category": [
+        "chai",
+        " samosa"
+      ],
+      "image": "https://media.gettyimages.com/photos/pan-fried-duck-picture-id1081422898?s=612x612",
+      "payment": {
+        "card": true,
+        "cash": false,
+        "upi": false
+      },
+      "id": 1
+    },
+    {
+      "name": "jaiki",
+      "review": 3,
+      "price": 60,
+      "country": "nepal",
+      "category": [
+        "chai",
+        " samosa"
+      ],
+      "image": "https://media.gettyimages.com/photos/pan-fried-duck-picture-id1081422898?s=612x612",
+      "payment": {
+        "card": true,
+        "cash": false,
+        "upi": false
+      },
+      "id": 2
+    },
+    {
+      "name": "rishabh",
+      "review": 4,
+      "price": 80,
+      "country": "pakistan",
+      "category": [
+        "chai",
+        " samosa"
+      ],
+      "image": "https://media.gettyimages.com/photos/pan-fried-duck-picture-id1081422898?s=612x612",
+      "payment": {
+        "card": true,
+        "cash": false,
+        "upi": false
+      },
+      "id": 3
+    },
+    {
+      "name": "aman",
+      "review": 2,
+      "price": 40,
+      "country": "bhootan",
+      "category": [
+        "chai",
+        " samosa"
+      ],
+      "image": "https://media.gettyimages.com/photos/pan-fried-duck-picture-id1081422898?s=612x612",
+      "payment": {
+        "card": true,
+        "cash": false,
+        "upi": false
+      },
+      "id": 4
+    },
+    {
+      "name": "adarh",
+      "review": 3,
+      "price": 60,
+      "country": "nepal",
+      "category": [
+        "chai",
+        " samosa"
+      ],
+      "image": "https://media.gettyimages.com/photos/pan-fried-duck-picture-id1081422898?s=612x612",
+      "payment": {
+        "card": true,
+        "cash": false,
+        "upi": false
+      },
+      "id": 5
+    }
+  ]
+}

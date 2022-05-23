@@ -1,0 +1,22 @@
+.container{
+    border: 1px solid black;
+    width: 50%;
+    margin: auto;
+}
+form{
+    text-align: center;
+}
+form input {
+    line-height: 30px;
+    width: 50%;
+    margin-bottom: 5px; 
+}
+.paymentbox  {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    margin-bottom: 10px;
+}
+.submit { 
+    margin-bottom: 5px;
+}

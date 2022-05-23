@@ -1,0 +1,14 @@
+table td{
+    font-size: 40px;
+    border: 2px solid black;
+    width: 100px;
+    height: 100px;
+    text-align: center;  
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin-top: 10vh;
+    font-size: 30px;
+}
