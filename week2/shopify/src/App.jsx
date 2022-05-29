@@ -7,6 +7,7 @@ import { Men } from './components/men/Men'
 import { Women } from './components/women/Women'
 import { Kid } from './components/kid/Kid'
 import { Contact } from './components/contact/Contact'
+import { Faq } from './components/faq/Faq'
 import { Login } from './components/login/login'
 import { Profile } from './components/profile/Profile'
 import { Cart } from './components/cart/Cart'
@@ -24,6 +25,7 @@ function App() {
         <Route path='/kid' element={<Kid></Kid>}></Route>
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/contact' element={<Contact></Contact>}></Route>
+        <Route path='/faq' element={<Faq></Faq>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/profile' element={<Profile></Profile>}></Route>
         <Route path='/cart' element={<Cart></Cart>}></Route>

@@ -30,6 +30,9 @@ export const Navbar = ()=>{
                     <Box>
                         <Link to='/contact' style={{textDecoration:"none"}}>Contact</Link>
                     </Box>
+                    <Box>
+                        <Link to='/faq' style={{textDecoration:"none"}}>FAQ ?</Link>
+                    </Box>
                 </Box>
                 <Box display='flex' gap={10} alignItems='center'>
                     <Link to='/cart'>
