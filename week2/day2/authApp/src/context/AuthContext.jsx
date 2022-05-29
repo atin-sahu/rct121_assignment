@@ -10,7 +10,7 @@ export const AuthContextProvider = ({children})=>{
     }
 
     return (
-        <AuthContext.Provider value={{isAuth,toggleAuth}} >
+        <AuthContext.Provider value={[isAuth,toggleAuth]} >
             {children}
         </AuthContext.Provider>
     )
