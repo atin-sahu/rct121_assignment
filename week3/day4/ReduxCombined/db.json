@@ -1,0 +1,29 @@
+{
+  "todos": [
+    {
+      "title": "chai",
+      "status": false,
+      "id": 1
+    },
+    {
+      "title": "learn redux",
+      "status": false,
+      "id": 2
+    },
+    {
+      "title": "learn react redux",
+      "status": false,
+      "id": 3
+    },
+    {
+      "title": "manjeet",
+      "status": false,
+      "id": 4
+    },
+    {
+      "title": "subhas",
+      "status": false,
+      "id": 5
+    }
+  ]
+}
