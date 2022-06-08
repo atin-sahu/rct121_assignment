@@ -10,32 +10,21 @@ export const Search = ()=>{
         getUsr()
      },[])
 
+    useEffect(()=>{
+        handleSerach();
+    },[page])
+
     const getUsr = async ()=>{
         const data = await axios.get("https://api.github.com/users")
         .then((data)=>data.data);
         setUsr(data);
-        // console.log("landdata",data);
     } 
-    
-    const handlepage = (value)=>{
-        setPage((page) => (page+value));
-        console.log("update",page);
-        handleSerach();
-    }
-
-    // const pagination = (arr,page, pagesize)=>{
-
-    //     return arr.slice((page-1)*pagesize, page*pagesize);
-
-    // }
 
     const handleSerach = async()=>{
         
         const data = await axios.get(`https://api.github.com/search/users?q=${text}&page=${page}&per_page=${5}`)
         .then((data)=>data.data);
         setUsr(data.items);
-        // console.log("search user", data.items);
-        // console.log(text);
     }
     return (
         <div>
@@ -50,8 +39,9 @@ export const Search = ()=>{
                 })}
             </div>
             <div>
-                <button disabled={page === 1 } onClick={() =>handlepage(-1)}>prev</button>
-                <button onClick={() =>handlepage(1)} >next</button>
+                <button disabled={page === 1 } onClick={() =>setPage(page-1)}>prev</button>
+                <p>{page}</p>
+                <button onClick={() =>setPage(page+1)} >next</button>
             </div>
         </div>
     )
