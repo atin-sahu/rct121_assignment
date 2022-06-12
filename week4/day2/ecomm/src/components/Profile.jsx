@@ -16,7 +16,7 @@ export const Profile = () => {
             <MenuButton as={Button} variant="link" rounded='full' cursor="pointer" minW={0}>
                 <Avatar name='Ryan Florence' src='https://bit.ly/ryan-florence' />
             </MenuButton>
-            <MenuList>
+            <MenuList zIndex={10}>
                 <MenuItem>Cart</MenuItem>
                 <MenuItem>Order</MenuItem>
                 <MenuItem>Logout</MenuItem>

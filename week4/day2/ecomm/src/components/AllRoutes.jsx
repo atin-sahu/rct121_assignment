@@ -6,6 +6,7 @@ import { Login } from '../pages/Login'
 import Oders from '../pages/Oders'
 import { Product } from '../pages/Product'
 import { Products } from '../pages/Products'
+import { AuthWrapper } from './AuthWrapper'
 
 
 export const AllRoutes = () => {
@@ -14,7 +15,7 @@ export const AllRoutes = () => {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/products' element={<Products/>}></Route>
         <Route path='/products/:id' element={<Product/>}></Route>
-        <Route path='/cart' element={<Cart></Cart>}></Route>
+        <Route path='/cart' element={<AuthWrapper><Cart></Cart></AuthWrapper>}></Route>
         <Route path='/orders' element={<Oders></Oders>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
     </Routes>

@@ -6,10 +6,12 @@ import {
 } from "redux";
 import thunk from "redux-thunk";
 import { reducer } from "./products/reducer";
+import {reducer as authReducer } from "./auth/reducer";
 
 
 const rootReducer = combineReducers({
   ecommerceData: reducer,
+  authReducer,
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
