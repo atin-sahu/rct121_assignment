@@ -9,11 +9,16 @@ import {
   useColorModeValue,
   useBreakpointValue,
   useDisclosure,
+  Icon,
 } from '@chakra-ui/react';
 import {
   HamburgerIcon,
   CloseIcon,
 } from '@chakra-ui/icons';
+import { Profile } from './Profile';
+import { BsCart3 } from 'react-icons/bs';
+import { CartCounter } from './CartCounter';
+import { Link } from 'react-router-dom';
 
 export const Navabar = () => {
   const { isOpen, onToggle } = useDisclosure();
@@ -61,6 +66,13 @@ export const Navabar = () => {
           justify={'flex-end'}
           direction={'row'}
           spacing={6}>
+            <Link to='/cart'>
+              <Box position='relative' p='0.5rem'>
+                <CartCounter></CartCounter>
+                <Icon as={BsCart3} boxSize='2rem'></Icon>
+              </Box>
+            </Link>
+            <Profile></Profile>
         </Stack>
       </Flex>
 
