@@ -49,8 +49,8 @@ export const CreateRestaurant = ()=>{
     }
 
     const deleteres = async (e)=>{
-        await axios.delete(`http://localhost:8080/data`)
-
+        await axios.delete(`http://localhost:8080/data/${e}`)
+        .then(()=>fetchData());
     }
 
     const sortArr = async (value,name)=>{
@@ -68,6 +68,7 @@ export const CreateRestaurant = ()=>{
         .then((data)=>(data.data));
         setArr(data);
     }
+
 
     return (
         <div>
@@ -125,7 +126,7 @@ export const CreateRestaurant = ()=>{
                 </div>
             </div>
             <div>
-                <RestaurantDetails arr={arr} deleteres={deleteres} sortArr={sortArr} filterArr={filterArr}></RestaurantDetails>
+                <RestaurantDetails arr={arr} deleteres={deleteres} sortArr={sortArr} filterArr={filterArr} ></RestaurantDetails>
             </div>
         </div>
     )

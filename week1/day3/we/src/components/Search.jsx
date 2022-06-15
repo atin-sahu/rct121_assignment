@@ -40,9 +40,23 @@ export const Search = ()=>{
             </div>
             <div>
                 <button disabled={page === 1 } onClick={() =>setPage(page-1)}>prev</button>
-                <p>{page}</p>
+                <PageComponent currpage={page} lastpage={5} onPageChange={setPage}></PageComponent>
                 <button onClick={() =>setPage(page+1)} >next</button>
             </div>
+        </div>
+    )
+}
+
+const PageComponent = ({currpage,lastpage,onPageChange})=>{
+    const arr = new Array(lastpage).fill(0);
+
+    return (
+        <div>
+            { arr.map( (item,page) => (
+                <div>
+                    <button onClick={()=>onPageChange(page+1)} disabled={(page+1) == currpage} >{page+1}</button>
+                </div>
+            ) ) }
         </div>
     )
 }

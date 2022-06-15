@@ -1,22 +1,18 @@
 import axios from "axios";
-import { useEffect, useState } from "react"
+import {  useEffect, useState } from "react"
 import "./RestaurantDetails.css"
 export const RestaurantDetails = ({arr,deleteres,sortArr,filterArr})=>{
 
-    // const [arr,setArr] = useState([]);
+    const [page,setPage] = useState(1);
 
-    // useEffect(()=>{
-    //     fetchData();
-    // },[]);
-
-    // const fetchData = async()=>{
-    //     const data = await axios.get("http://localhost:8080/data")
-    //     .then((data)=>data.data)
-    //     setArr(data);
-    //     console.log(data);
+    // const handlePage = (value)=>{
+    //     setPage(page+value);
+    //     console.log(page);
     // }
 
-
+    useEffect((value)=>{
+        page
+    },[page]);
 
     return (
         <div className="main">
@@ -65,7 +61,7 @@ export const RestaurantDetails = ({arr,deleteres,sortArr,filterArr})=>{
                 <div key={e.id} className="singleres">
                     <div className="left">
                         <img src={e.image}></img>
-                        <button onClick={()=>{deleteres(e)}}>delete</button>
+                        <button onClick={()=>{deleteres(e.id)}}>delete</button>
                     </div>
                     <div className="right">
                         <div className="subleft">
@@ -82,13 +78,18 @@ export const RestaurantDetails = ({arr,deleteres,sortArr,filterArr})=>{
                             <p>review: {e.review}</p>
                         </div>
                     </div>
-                    {/* <ul>
-                        <li>{e.payment.cash ? "cash" : ""}</li>
-                        <li>{e.payment.card ? "card" : ""}</li>
-                        <li>{e.payment.upi ? "upi" : ""}</li>
-                    </ul> */}
+                    <ul>
+                        { e.payment.card ? <li>card</li>: "" }
+                        { e.payment.cash ?<li>cash</li>: "" }
+                        { e.payment.upi ? <li>upi</li>: "" }
+                    </ul>
                 </div>         
             ))}
+            <div style={{display:"flex",gap:"5px", justifyContent:"center", margin:"50px"}}>
+                <button disabled={page==1} onClick={()=>{handlePage(-1)}}>prev</button>
+                <p>{page}</p>
+                <button onClick={()=>{handlePage(1)}}>next</button>
+            </div>
         </div>
     )
 }
