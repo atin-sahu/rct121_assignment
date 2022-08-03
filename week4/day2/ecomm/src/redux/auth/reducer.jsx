@@ -1,7 +1,7 @@
 import { SIGNIN_FAILURE, SIGNIN_REQUEST, SIGNIN_SUCCESS } from "./action";
 
 const initialState = {
-  auth: false,
+  auth: true,
   token: "",
 };
 
