@@ -1,9 +1,17 @@
+import { Box, Text } from '@chakra-ui/react'
 import React from 'react'
+import { Count } from './Count'
 
-const Todo = () => {
+export const Todo = () => {
+
+  
   return (
-    <div>Todo</div>
+    <Box >
+      <Count></Count>
+      <Box align="center">
+        <Text fontWeight="semibold">Todo App</Text>
+
+      </Box>
+    </Box>
   )
 }
-
-export default Todo
