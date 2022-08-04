@@ -1,8 +1,11 @@
-import { legacy_createStore as createStore} from "redux";
+import { combineReducers, legacy_createStore as createStore } from "redux";
+import { TReducer } from "./todo/TReducer";
 import { CReducer } from "./count/CReducer";
-// import { combineReducers, legacy_createStore as createStore} from "redux";
 
+const rootReeducer = combineReducers({
+    countReducer:CReducer,
+    todoReducer:TReducer
+})
 
-export const Store = createStore(CReducer);
-
-console.log("store",Store);
+export const Store = createStore(rootReeducer);
+console.log("Store",Store.getState());

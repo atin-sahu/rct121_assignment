@@ -5,8 +5,8 @@ import { addNumber } from '../redux/count/Action'
 
 export const Count = () => {
 
-  const count = useSelector((state)=>(state.count));
-  console.log(count);
+  const count = useSelector((state)=>(state.countReducer.count));
+  console.log("count",count);
   const dispatch = useDispatch();
 
   return (
