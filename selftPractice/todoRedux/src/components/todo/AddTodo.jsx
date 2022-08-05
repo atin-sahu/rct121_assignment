@@ -13,16 +13,17 @@ export const AddTodo = () => {
   const [status,setStatus] = useState(false);
   
   // just for console thing
-  const newTodo = {
-    title:todo,
-    status:false
-  }
+  // const newTodo = {
+  //   title:todo,
+  //   status:false
+  // }
 
 
   const handleAdd = ()=>{
-    console.log("newTodo",newTodo);
+    // console.log("newTodo",newTodo);
     addTodos(dispatch,todo,status)
-    .then(()=>alert("Todo Added Successfully !!!!!!!"));
+    .then(()=>alert("Todo Added Successfully !!!!!!!"))
+    .then(()=>{setTodo("")});
   }
 
   return (
@@ -35,13 +36,13 @@ export const AddTodo = () => {
         </Box>
       ):(
         <Box bgColor="#b5eecc" h="100vh">
-        <Text align="center" fontWeight="semibold" fontSize="2xl" py={5}>ADD Todo</Text>
+        <Text align="center" fontWeight="semibold" fontSize="3xl" py={5}>ADD TODO</Text>
         <Box width="50%" bgColor="rgb(179,212,255)" m="auto" py={20} align="center">
           <FormControl w="sm" >
             <FormLabel>Enter Todo</FormLabel>
-            <Input onChange={(e)=>setTodo(e.target.value)} bgColor="whitesmoke" type='email' />
+            <Input placeholder='enter new todo' onChange={(e)=>setTodo(e.target.value)} bgColor="whitesmoke" type='email' />
           </FormControl>
-          <Button onClick={()=>handleAdd()} my={5} >Add</Button>
+          <Button disabled={!todo} w="70%" onClick={()=>handleAdd()} my={10} >Add Todo</Button>
         </Box>
       </Box>
       )}

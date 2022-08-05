@@ -10,28 +10,27 @@ import { updTodos } from '../../redux/todo/Action'
 export const Edit = () => {
 
   const {id} = useParams();
-  const [editableData,setEditableData] = useState({});
+  
+  const [editableData,setEditableData] = useState("");
+
+  const getEditableData = async () => {
+    const data = await axios.get(`http://localhost:8080/todos/${id}`)
+    .then((data) => setEditableData(data.data.title));
+  };
+  // console.log("editableData",editableData);
 
   useEffect(() => {
     getEditableData();
   }, []);
 
-  const getEditableData = async () => {
-    const data = await axios.get(`http://localhost:8080/todos/${id}`)
-    .then((data) => setEditableData(data.data));
-  };
-  console.log("editableData",editableData);
-
   const dispatch = useDispatch();
-  const [editedTodo,setEditedTodo] = useState("");
   const loading = useSelector((state)=>(state.todoReducer.loading))  
 
-
   const handleEdit = ()=>{
-    console.log("updated todo",editedTodo);
-    updTodos(dispatch,editedTodo,id);
+    updTodos(dispatch,editableData,id)
+    .then(()=>{setEditableData("")})
+    .then(()=>alert("Todo updated Successfully !!!!!!!"));
   }
-
 
   return (
     <Box>
@@ -43,13 +42,13 @@ export const Edit = () => {
         </Box>
       ):(
         <Box bgColor="#b5eecc" h="100vh">
-        <Text align="center" fontWeight="semibold" fontSize="2xl" py={5}>Edit Todo</Text>
+        <Text align="center" fontWeight="semibold" fontSize="3xl" py={5}>EDIT TODO</Text>
         <Box width="50%" bgColor="rgb(179,212,255)" m="auto" py={20} align="center">
           <FormControl w="sm" >
             <FormLabel>Enter Correct Todo</FormLabel>
-            <Input onChange={(e)=>setEditedTodo(e.target.value)} bgColor="whitesmoke" type='email' />
+            <Input value={editableData} onChange={(e)=>setEditableData(e.target.value)} bgColor="whitesmoke" type='email' />
           </FormControl>
-          <Button onClick={()=>handleEdit()} my={5} >Update</Button>
+          <Button w="70%" onClick={()=>handleEdit()} my={10} >Update</Button>
         </Box>
       </Box>
       )}

@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'
 
 export const Navbar = () => {
   return (
-    <Box bgColor="whitesmoke" px={5} py={2}>
-        <Box display="flex" bgColor="white" justifyContent="space-between" p={2}>
+    <Box bgColor="rgb(179,212,255)" px={5} py={2}>
+        <Box display="flex" bgColor="whitesmoke"  justifyContent="space-between" p={2}>
             <Box>
                 <Link to="/"><Text fontWeight="semibold" cursor="pointer">Redux</Text></Link>
             </Box>
