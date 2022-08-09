@@ -17,6 +17,7 @@ export const Search = ()=>{
     const getUsr = async ()=>{
         const data = await axios.get("https://api.github.com/users")
         .then((data)=>data.data);
+        console.log("usr", data);
         setUsr(data);
     } 
 
