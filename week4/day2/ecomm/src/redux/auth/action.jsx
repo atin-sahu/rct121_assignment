@@ -28,3 +28,35 @@ export const signIn = (payload) => (dispatch) => {
     .then((res)=>dispatch(signInSuccess(res.data)))
     .catch((err)=>dispatch(signInFailure(err.data)));
 }
+
+// for signout
+
+export const SIGNOUT_REQUEST = "SIGNOUT_REQUEST";
+export const SIGNOUT_SUCCESS = "SIGNOUT_SUCCESS";
+export const SIGNOUT_FAILURE = "SIGNOUT_FAILURE";
+
+const signOutRequest = () => {
+    return{
+        type:SIGNOUT_REQUEST,
+    }
+}
+
+const signOutSuccess = () => {
+    return{
+        type:SIGNOUT_SUCCESS,
+    }
+}
+
+const signOutFailure = () => {
+    return{
+        type:SIGNOUT_FAILURE,
+    }
+}
+
+export const signOut = (payload) => (dispatch) => {
+    // dispatch(signOutRequest());
+    // axios.get("/api/login",payload, {baseURL:"https://reqres.in"})
+    // .then((res)=>dispatch(signOutSuccess(res.data)))
+    // .catch((res)=>dispatch(signOutFailure(res.data)));
+    dispatch(signOutSuccess(payload))
+}

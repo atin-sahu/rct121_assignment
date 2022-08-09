@@ -8,8 +8,16 @@ import {
     Avatar
   } from '@chakra-ui/react'
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { signOut } from '../redux/auth/action';
 
 export const Profile = () => {
+  const dispatch = useDispatch();
+
+const handleLogout = ()=>{
+  dispatch(signOut(false))
+}
+
   return (
     <Flex>
         <Menu>
@@ -19,7 +27,7 @@ export const Profile = () => {
             <MenuList zIndex={10}>
                 <MenuItem>Cart</MenuItem>
                 <MenuItem>Order</MenuItem>
-                <MenuItem>Logout</MenuItem>
+                <MenuItem onClick={handleLogout}>Logout</MenuItem>
             </MenuList>
         </Menu>
     </Flex>
