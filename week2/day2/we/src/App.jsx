@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { AppContext } from "./context/AppContextProvider"
 import "./App.css"
-import { Counter } from "./components/counter"
+// import { Counter } from "./components/counter"
 
 function App() {
  const [theme, toggletheme] = useContext(AppContext)
