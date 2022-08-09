@@ -7,12 +7,12 @@ import {
     Text,
     useColorModeValue,
   } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
-
-
-export const ProductSimple = ({image, title, price}) => {
+export const ProductSimple = ({id, image, title, price}) => {
     return (
       <Center py={12}>
+        <Link to={`/products/${id}`}>
         <Box
           role={"group"}
           p={6}
@@ -70,6 +70,7 @@ export const ProductSimple = ({image, title, price}) => {
             </Stack>
           </Stack>
         </Box>
+        </Link>
       </Center>
     );
   }

@@ -19,9 +19,12 @@ import { Profile } from './Profile';
 import { BsCart3 } from 'react-icons/bs';
 import { CartCounter } from './CartCounter';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 export const Navabar = () => {
   const { isOpen, onToggle } = useDisclosure();
+  const isAuth = useSelector((state)=>state.authReducer.auth);
+  console.log("isAuth navbar",isAuth);
 
   return (
     <Box>
@@ -56,12 +59,21 @@ export const Navabar = () => {
             Logo
           </Text>
 
-          <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
+          <Flex display={{ base: 'none', md: 'flex' }} ml={10} gap={5}>
             {/* <DesktopNav /> */}
+            <Box>
+              <Link to="/products">products</Link>
+            </Box>
+
+            <Box>
+              <Link to="/orders">order</Link>
+            </Box>
+
           </Flex>
         </Flex>
 
-        <Stack
+        { isAuth ? (
+          <Stack
           flex={{ base: 1, md: 0 }}
           justify={'flex-end'}
           direction={'row'}
@@ -73,7 +85,13 @@ export const Navabar = () => {
               </Box>
             </Link>
             <Profile></Profile>
-        </Stack>
+          </Stack>
+        ) : (
+          <Box>
+            <Link to="/login">login</Link>
+          </Box>
+        )}
+
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>

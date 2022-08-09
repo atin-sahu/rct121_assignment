@@ -14,12 +14,16 @@ import { useSearchParams } from "react-router-dom";
 import { FilterComponent } from "../components/FilterComponent";
 import { ProductSimple } from "../components/ProductSimple";
 import { fetchData } from "../redux/products/action";
+// import { useNavigate } from "react-router-dom";
 
 export const Products = () => {
   const products = useSelector((store) => store.ecommerceData.products);
   const [searchParams, setSearchParams] = useSearchParams();
-  // console.log("products",products);
+  console.log("products",products);
   const dispatch = useDispatch();
+
+  const isAuth = useSelector((store)=>store.authReducer.auth);
+  console.log("isAuth products",isAuth);
 
   useEffect(() => {
     let params = {
@@ -28,8 +32,11 @@ export const Products = () => {
     dispatch(fetchData(params));
   }, [dispatch,searchParams]);
 
+  // const navigate = useNavigate();
+
   return (
     <Box>
+      {/* { !isAuth && navigate("/login") } */}
       <Stack display={{ md: "flex" }} flexDirection={{ md: "row" }}>
         <Box minW={"15rem"}>
           <FilterComponent></FilterComponent>
@@ -41,6 +48,7 @@ export const Products = () => {
               return (
                 <ProductSimple
                   key={product.id}
+                  id={product.id}
                   image={product.image}
                   title={product.title}
                   price={product.price}
